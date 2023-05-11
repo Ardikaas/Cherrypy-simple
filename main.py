@@ -3,7 +3,7 @@ import random
 import string
 import cherrypy
 
-class StringGenerator(object):
+class PasswordGenerator(object):
     @cherrypy.expose
     def index(self):
         return open('C:/Project/Project Programming/python/src/02 - Cherrypy/index.html')
@@ -22,4 +22,4 @@ if __name__ == '__main__':
             'tools.staticdir.dir': 'C:/Project/Project Programming/python/src/02 - Cherrypy/public'
         }
     }
-    cherrypy.quickstart(StringGenerator(), '/', conf)
+    cherrypy.quickstart(PasswordGenerator(), '/', conf)
