@@ -1,18 +1,16 @@
 import os
-
+import random
+import string
 import cherrypy
 
 class StringGenerator(object):
     @cherrypy.expose
     def index(self):
-        return """<html>
-          <head>
-            <link href="/static/css/style.css" rel="stylesheet">
-          </head>
-          <body>
-            <p>Warna</p>
-          </body>
-        </html>"""
+        return open('C:/Project/Project Programming/python/src/02 - Cherrypy/index.html')
+
+    @cherrypy.expose
+    def generate(self, length=8):
+        return ''.join(random.sample(string.hexdigits, int(length)))
 
 if __name__ == '__main__':
     conf = {
